@@ -31,18 +31,19 @@ In Terraform, variables can be defined in multiple places. When you specify valu
 The -var option in Terraform allows you to specify a value for a variable directly from the command line. This is useful when you want to override default values or don't want to manage variable values in separate files. The -var flag is typically used for one-off variable assignments or when you want to provide specific values without modifying configuration files.
 
 #### Syntax:
+```
 terraform plan -var "variable_name=value"
 terraform apply -var "variable_name=value"
-
+```
 -----------------------------------------------------------------------
 ### Using -var-file in Terraform
 The -var-file option in Terraform allows you to specify an external file that contains the variable definitions, rather than passing them individually on the command line or hardcoding them in your Terraform configuration. This option is useful for separating variable values from the Terraform configuration and for organizing values for different environments (e.g., development, production).
 
 #### Syntax: 
-
+```
 terraform plan -var-file="<filename>.tfvars"
 terraform apply -var-file="<filename>.tfvars"
-
+```
 ----------------------------------------------------------------------------------------
 ### output.tf in Terraform
 output.tf: The output.tf file in Terraform is used to define output values, which are values you want to display after applying your Terraform configuration. These values are helpful for sharing important information (like instance IDs, IP addresses, or DNS names) from your infrastructure setup.
