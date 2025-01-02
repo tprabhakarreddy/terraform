@@ -48,6 +48,7 @@ terraform apply -var-file="<filename>.tfvars"
 output.tf: The output.tf file in Terraform is used to define output values, which are values you want to display after applying your Terraform configuration. These values are helpful for sharing important information (like instance IDs, IP addresses, or DNS names) from your infrastructure setup.
 
 #### Structure of output.tf:
+```
 output "<output_name>" {
       value       = <value>
       description = "<description>" # Optional
