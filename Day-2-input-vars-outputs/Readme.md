@@ -64,7 +64,7 @@ Here, you define the variables instance_type and key_name, their types (string),
 instance_type = "t3.micro"
 key_name = "tvarf_newkey"
 ```
-In this example, the values "t3.micro" for the instance_type variable and "varf_newkey" for the key_name variable will override the defaults specified in variables.tf.
+In this example, the values "t3.micro" for the instance_type variable and "tvarf_newkey" for the key_name variable will override the defaults specified in variables.tf.
 
 
 ###  Determine which value to apply if the  value is defined in multiple places (e.g., -var, variables.tf, and terraform.tfvars)
