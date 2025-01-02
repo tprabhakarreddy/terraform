@@ -1,4 +1,6 @@
 Topics discussed in today's class
+-----------------------------------------
+
 1. significance of .tfvars
 2. significance of output.tf
 3. terraform plan -var or terraform apply -var
@@ -46,9 +48,10 @@ main.tf: No value specified, so it defaults to default-key
 terraform apply -var: The terraform apply -var= command is used to explicitly pass variables and their values directly on the command line when running terraform apply. This allows you to override values defined in terraform.tfvars, environment variables, or defaults in variables.tf.
 
 Syntax: terraform apply -var="variable_name=value"
---------------------------------------------------------------------------------------
 
+-----------------------------------------------------------------------
 terraform apply -var-file: The terraform apply -var-file= command is used to pass a .tfvars file containing variable values to Terraform during the apply process. This method is particularly useful when managing multiple sets of variables for different environments (e.g., development, staging, production).
+
 Syntax: terraform apply -var-file=<filename>
 
 ----------------------------------------------------------------------------------------
