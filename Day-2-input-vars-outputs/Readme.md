@@ -57,10 +57,12 @@ output "<output_name>" {
 ```
 
 Example:
+```
 output "instance_public_ip" {
   value       = aws_instance.my_instance.public_ip
   description = "The public IP of the EC2 instance"
 }
+```
 
 ------------------------------------------------------------------------------------------
 ### Using terraform fmt to Format Terraform Code
