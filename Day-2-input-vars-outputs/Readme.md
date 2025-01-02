@@ -17,6 +17,10 @@ The -var option in Terraform allows you to specify a value for a variable direct
 terraform plan -var "variable_name=value"
 terraform apply -var "variable_name=value"
 ```
+#### Example:
+```
+terraform plan -var="key_name=my-cli-key"
+```
 -----------------------------------------------------------------------
 ### Using -var-file in Terraform
 The -var-file option in Terraform allows you to specify an external file that contains the variable definitions, rather than passing them individually on the command line or hardcoding them in your Terraform configuration. This option is useful for separating variable values from the Terraform configuration and for organizing values for different environments (e.g., development, production).
@@ -25,6 +29,10 @@ The -var-file option in Terraform allows you to specify an external file that co
 ```
 terraform plan -var-file="<filename>.tfvars"
 terraform apply -var-file="<filename>.tfvars"
+```
+#### Example
+```
+terraform plan -var-file="dev.tfvars"
 ```
 ----------------------------------------------------------------------------------------
 ### The Significance of the terraform.tfvars 
