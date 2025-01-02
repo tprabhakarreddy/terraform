@@ -79,3 +79,5 @@ Command: terraform fmt
 terraform validate: terraform validate is a command in Terraform that checks whether your configuration files are syntactically valid and internally consistent, without actually applying or modifying any infrastructure. This command ensures that the Terraform files follow the correct structure, that the syntax is correct, and that the configuration is logically sound.
 
 Command: terraform validate
+-----------------------------------------------------------------------
+Please refer to Understanding tfvars and output.docX file for more details
