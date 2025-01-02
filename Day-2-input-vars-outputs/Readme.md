@@ -9,24 +9,6 @@ Topics discussed in today's class
 6. terraform fmt
 7. terraform validate
 ----------------------------------------------------------------------------------
-###  Determine which value to apply if the  value is defined in multiple places (e.g., -var, variables.tf, and terraform.tfvars)
-
-In Terraform, variables can be defined in multiple places. When you specify values for variables in multiple places, Terraform applies a particular order of precedence to determine which value to use. Here's how the variable assignment works:
-
-1. -var: When you provide a variable value directly on the command line using the -var flag, it has the highest precedence.
-
-2. -tfvars: If a .tfvars file is used, its values are applied after the command-line -var flag but before the variable.tf or main.tf.
-
-3. variable.tf: This file contains the default values for the variables. If none of the other sources specify a value, the default value from variable.tf will be used.
-
-#### Precedence Order
-| Precedence Order | Source                  | Example Key Value   |
-|-------------------|-------------------------|---------------------|
-| 1                 | Command Line (`-var`)  | `cli-key`          |
-| 2                 | Variable File (`.tfvars`) | `tfvars-key`     |
-| 3                 | Default (`variables.tf`) | `default-key`     |
-
-----------------------------------------------------------------------------------------------
 ### Using -var in Terraform
 The -var option in Terraform allows you to specify a value for a variable directly from the command line. This is useful when you want to override default values or don't want to manage variable values in separate files. The -var flag is typically used for one-off variable assignments or when you want to provide specific values without modifying configuration files.
 
@@ -45,6 +27,31 @@ terraform plan -var-file="<filename>.tfvars"
 terraform apply -var-file="<filename>.tfvars"
 ```
 ----------------------------------------------------------------------------------------
+### The Significance of the terraform.tfvars 
+The terraform.tfvars file in Terraform is a key mechanism used to define the values of variables in a Terraform configuration. It is often used to simplify and centralize the management of input variables that your configuration depends on.
+#### When and Why to Use Them Together:
+**Use** `variables.tf`: When you want to define the structure, types, and defaults for the variables you plan to use in your Terraform configuration. This makes your code more modular and reusable.
+
+**Use** `terraform.tfvars`: When you want to override the default values of variables or specify different values for variables depending on the environment (e.g., dev, prod) or specific configurations.
+
+###  Determine which value to apply if the  value is defined in multiple places (e.g., -var, variables.tf, and terraform.tfvars)
+
+In Terraform, variables can be defined in multiple places. When you specify values for variables in multiple places, Terraform applies a particular order of precedence to determine which value to use. Here's how the variable assignment works:
+
+1. -var: When you provide a variable value directly on the command line using the -var flag, it has the highest precedence.
+
+2. -tfvars: If a .tfvars file is used, its values are applied after the command-line -var flag but before the variable.tf or main.tf.
+
+3. variable.tf: This file contains the default values for the variables. If none of the other sources specify a value, the default value from variable.tf will be used.
+
+#### Precedence Order
+| Precedence Order | Source                  | Example Key Value   |
+|-------------------|-------------------------|---------------------|
+| 1                 | Command Line (`-var`)  | `cli-key`          |
+| 2                 | Variable File (`.tfvars`) | `tfvars-key`     |
+| 3                 | Default (`variables.tf`) | `default-key`     |
+
+----------------------------------------------------------------------------------------------
 ### output.tf in Terraform
 output.tf: The output.tf file in Terraform is used to define output values, which are values you want to display after applying your Terraform configuration. These values are helpful for sharing important information (like instance IDs, IP addresses, or DNS names) from your infrastructure setup.
 
