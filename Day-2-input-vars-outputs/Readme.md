@@ -83,5 +83,5 @@ terraform validate: terraform validate is a command in Terraform that checks whe
 Command: terraform validate
 
 ------------------------------------------------------------------------
-Please refer to Understanding tfvars and output.docX file for more details
+Please refer to anoter document "Understanding tfvars and output.docX" for more details
 ----------------------------------------------------------------------------
