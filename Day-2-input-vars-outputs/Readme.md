@@ -20,21 +20,6 @@ In Terraform, variables can be defined in multiple places. When you specify valu
 
 ![alt text](image.png)
 
-Example:
-Let’s say we have a variable named key_name:
-1. variable.tf:
-    variable "key_name" {
-    default = "default-key" 
-    }
-2. myvars.tfvars:
-    key_name = "tfvars-key"
-3. Command line with -var:
-    terraform apply -var "key_name=cli-key"
-
-Precedence:
-1. Command line (-var): cli-key (highest precedence)
-2. .tfvars file (myvars.tfvars): tfvars-key
-3. variable.tf: default-key
 ----------------------------------------------------------------------------------------------
 
 terraform apply -var: The terraform apply -var= command is used to explicitly pass variables and their values directly on the command line when running terraform apply. This allows you to override values defined in terraform.tfvars, environment variables, or defaults in variables.tf.
