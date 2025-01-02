@@ -49,7 +49,6 @@ Syntax: terraform apply -var="variable_name=value"
 --------------------------------------------------------------------------------------
 
 terraform apply -var-file: The terraform apply -var-file= command is used to pass a .tfvars file containing variable values to Terraform during the apply process. This method is particularly useful when managing multiple sets of variables for different environments (e.g., development, staging, production).
-
 Syntax: terraform apply -var-file=<filename>
 
 ----------------------------------------------------------------------------------------
