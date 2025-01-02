@@ -42,6 +42,32 @@ The terraform.tfvars file in Terraform is a key mechanism used to define the val
 
 **Use** `terraform.tfvars`: When you want to override the default values of variables or specify different values for variables depending on the environment (e.g., dev, prod) or specific configurations.
 
+** Example: ** (`variables.tf`):
+```
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "key_name" {
+  description = "Key for EC2 instance"
+  type        = string
+  default     = "newkey"
+}
+
+Here, you define the variables instance_type and key_name, their types (string), and optional default values. If no value is provided for these variables, Terraform will use the defaults.
+
+```
+** Example: ** (`terraform.tfvars`):
+```
+# terraform.tfvars
+instance_type = "t3.micro"
+key_name = "tvarf_newkey"
+```
+In this example, the values "t3.micro" for the instance_type variable and "varf_newkey" for the key_name variable will override the defaults specified in variables.tf.
+
+
 ###  Determine which value to apply if the  value is defined in multiple places (e.g., -var, variables.tf, and terraform.tfvars)
 
 In Terraform, variables can be defined in multiple places. When you specify values for variables in multiple places, Terraform applies a particular order of precedence to determine which value to use. Here's how the variable assignment works:
