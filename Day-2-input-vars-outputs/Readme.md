@@ -55,11 +55,10 @@ variable "key_name" {
   type        = string
   default     = "newkey"
 }
-
+```
 Here, you define the variables instance_type and key_name, their types (string), and optional default values. If no value is provided for these variables, Terraform will use the defaults.
 
-```
-**Example:** (`terraform.tfvars`):
+** Example: ** (`terraform.tfvars`):
 ```
 # terraform.tfvars
 instance_type = "t3.micro"
