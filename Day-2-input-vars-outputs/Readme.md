@@ -14,11 +14,9 @@ In Terraform, variables can be defined in multiple places. When you specify valu
 
 1. -var: When you provide a variable value directly on the command line using the -var flag, it has the highest precedence.
 
-2. main.tf: If the variable is defined in main.tf (or any other Terraform configuration files), it gets used only if no value is specified via the -var flag.
+2. -tfvars: If a .tfvars file is used, its values are applied after the command-line -var flag but before the variable.tf or main.tf.
 
-3. -tfvars: If a .tfvars file is used, its values are applied after the command-line -var flag but before the variable.tf or main.tf.
-
-4. variable.tf: This file contains the default values for the variables. If none of the other sources specify a value, the default value from variable.tf will be used.
+3. variable.tf: This file contains the default values for the variables. If none of the other sources specify a value, the default value from variable.tf will be used.
 
 ![alt text](image.png)
 
