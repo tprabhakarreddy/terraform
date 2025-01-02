@@ -68,17 +68,19 @@ output "instance_public_ip" {
 ### Using terraform fmt to Format Terraform Code
 The terraform fmt command automatically formats Terraform configuration files (.tf files) according to the official Terraform style guide. This ensures that your code is consistent, readable, and follows best practices for indentation, alignment, and structure.
 
-#### Command: 
+#### Command:
+```
 terraform fmt
-
+```
 --------------------------------------------------------------------------------------------
 ### Using terraform validate to Validate Terraform Configuration
 The terraform validate command is used to check the syntax and configuration of your Terraform files to ensure they are correct before applying them. It helps identify common errors in the Terraform configuration such as missing or incorrect resource definitions, invalid references, or incorrect variable types. However, it does not interact with the actual cloud provider or create infrastructure—its sole purpose is to validate the configuration files.
 
 
 #### Command: 
+```
 terraform validate
-
+```
 ------------------------------------------------------------------------
 Please refer to anoter document "Understanding tfvars and output.docX" for more details
 ----------------------------------------------------------------------------
