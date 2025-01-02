@@ -49,9 +49,9 @@ output.tf: The output.tf file in Terraform is used to define output values, whic
 
 #### Structure of output.tf:
 output "<output_name>" {
-  value       = <value>
-  description = "<description>" # Optional
-  sensitive   = <true/false>    # Optional
+      value       = <value>
+      description = "<description>" # Optional
+      sensitive   = <true/false>    # Optional
 }
 
 Example:
