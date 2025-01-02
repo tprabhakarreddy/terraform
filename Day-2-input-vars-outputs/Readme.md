@@ -54,6 +54,7 @@ output "<output_name>" {
       description = "<description>" # Optional
       sensitive   = <true/false>    # Optional
 }
+```
 
 Example:
 output "instance_public_ip" {
