@@ -4,11 +4,12 @@ Topics discussed in today's class
 1. significance of .tfvars
 2. significance of output.tf
 3. terraform plan -var or terraform apply -var
-4. Determine which value to apply if the  value is defined in multiple places (e.g., main.tf, variables.tf, and terraform.tfvars)
+4. Determine which value to apply if the  value is defined in multiple places (e.g., -var, variables.tf, and terraform.tfvars)
 5. terraform plan -var-file <filename> or terraform apply -var-file <filename>
 6. terraform fmt
 7. terraform validate
 ----------------------------------------------------------------------------------
+###  Determine which value to apply if the  value is defined in multiple places (e.g., -var, variables.tf, and terraform.tfvars)
 
 In Terraform, variables can be defined in multiple places. When you specify values for variables in multiple places, Terraform applies a particular order of precedence to determine which value to use. Here's how the variable assignment works:
 
@@ -18,24 +19,35 @@ In Terraform, variables can be defined in multiple places. When you specify valu
 
 3. variable.tf: This file contains the default values for the variables. If none of the other sources specify a value, the default value from variable.tf will be used.
 
-![alt text](image.png)
+#### Precedence Order
+| Precedence Order | Source                  | Example Key Value   |
+|-------------------|-------------------------|---------------------|
+| 1                 | Command Line (`-var`)  | `cli-key`          |
+| 2                 | Variable File (`.tfvars`) | `tfvars-key`     |
+| 3                 | Default (`variables.tf`) | `default-key`     |
 
 ----------------------------------------------------------------------------------------------
+### Using -var in Terraform
+The -var option in Terraform allows you to specify a value for a variable directly from the command line. This is useful when you want to override default values or don't want to manage variable values in separate files. The -var flag is typically used for one-off variable assignments or when you want to provide specific values without modifying configuration files.
 
-terraform apply -var: The terraform apply -var= command is used to explicitly pass variables and their values directly on the command line when running terraform apply. This allows you to override values defined in terraform.tfvars, environment variables, or defaults in variables.tf.
-
-Syntax: terraform apply -var="variable_name=value"
+#### Syntax:
+terraform plan -var "variable_name=value"
+terraform apply -var "variable_name=value"
 
 -----------------------------------------------------------------------
-terraform apply -var-file: The terraform apply -var-file= command is used to pass a .tfvars file containing variable values to Terraform during the apply process. This method is particularly useful when managing multiple sets of variables for different environments (e.g., development, staging, production).
+### Using -var-file in Terraform
+The -var-file option in Terraform allows you to specify an external file that contains the variable definitions, rather than passing them individually on the command line or hardcoding them in your Terraform configuration. This option is useful for separating variable values from the Terraform configuration and for organizing values for different environments (e.g., development, production).
 
-Syntax: terraform apply -var-file=<filename>
+#### Syntax: 
+
+terraform plan -var-file="<filename>.tfvars"
+terraform apply -var-file="<filename>.tfvars"
 
 ----------------------------------------------------------------------------------------
-
+### output.tf in Terraform
 output.tf: The output.tf file in Terraform is used to define output values, which are values you want to display after applying your Terraform configuration. These values are helpful for sharing important information (like instance IDs, IP addresses, or DNS names) from your infrastructure setup.
 
-Syntax:
+#### Structure of output.tf:
 output "<output_name>" {
   value       = <value>
   description = "<description>" # Optional
@@ -49,15 +61,19 @@ output "instance_public_ip" {
 }
 
 ------------------------------------------------------------------------------------------
-terraform fmt: terraform fmt is a command used in Terraform to automatically format your Terraform configuration files (e.g., *.tf files) according to the canonical style guidelines. This ensures that your code is consistent, readable, and adheres to a standard formatting style, improving maintainability and collaboration.
+### Using terraform fmt to Format Terraform Code
+The terraform fmt command automatically formats Terraform configuration files (.tf files) according to the official Terraform style guide. This ensures that your code is consistent, readable, and follows best practices for indentation, alignment, and structure.
 
-Command: terraform fmt
+#### Command: 
+terraform fmt
 
 --------------------------------------------------------------------------------------------
+### Using terraform validate to Validate Terraform Configuration
+The terraform validate command is used to check the syntax and configuration of your Terraform files to ensure they are correct before applying them. It helps identify common errors in the Terraform configuration such as missing or incorrect resource definitions, invalid references, or incorrect variable types. However, it does not interact with the actual cloud provider or create infrastructure—its sole purpose is to validate the configuration files.
 
-terraform validate: terraform validate is a command in Terraform that checks whether your configuration files are syntactically valid and internally consistent, without actually applying or modifying any infrastructure. This command ensures that the Terraform files follow the correct structure, that the syntax is correct, and that the configuration is logically sound.
 
-Command: terraform validate
+#### Command: 
+terraform validate
 
 ------------------------------------------------------------------------
 Please refer to anoter document "Understanding tfvars and output.docX" for more details
