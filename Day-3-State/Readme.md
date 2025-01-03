@@ -155,4 +155,4 @@ Result:
 
 
 ------------------------------------------------------------------------
-#### Please refer to anoter document "Understanding Terraform State: Overrides, Collaboration, and Workflow.docX" for more details
+#### Please refer to anoter document "Understanding Terraform State.docX" for more details
