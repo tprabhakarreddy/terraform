@@ -23,7 +23,13 @@ Helps manage complex infrastructure by tracking resource relationships and depen
 #### 4. Facilitates Collaboration:
 With remote backends, allows multiple developers to work on the same infrastructure without conflicts.
 
-The following cases were discussed in the class:
+### Types of State Files:
+#### 1.	Local State File
+Stored on the local machine in the same directory as your Terraform configuration. Best for individual use, but not ideal for team collaboration.
+#### 2.	Remote State File
+Stored in a remote backend (e.g., AWS S3, Terraform Cloud) to enable collaboration across teams and ensure the state is consistent and shared.
+
+*The following cases were discussed in the class:*
 ### Case 1: Manual updates on the console are overridden by `terraform apply`
 If manual changes are made directly in the cloud console (e.g., adding or modifying resources), `terraform apply` will override these changes when it is run. This is because Terraform compares the current state with the desired state defined in the `.tf` files, and any manual updates that deviate from this will be corrected.
 
