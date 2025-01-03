@@ -43,7 +43,7 @@ If manual changes are made directly in the cloud console (e.g., adding or modify
 2. Manual Update:
    AWS EC2 Instance: Name manually updated to "db-server"
 
-3. After Running ``terraform apply``:
+3. After Running \`terraform apply\`:
    Terraform Configuration (.tf file): Name = "web-server"
    State File (terraform.tfstate): Name = "web-server"
    AWS EC2 Instance: Name restored to "web-server"
