@@ -19,13 +19,17 @@ Topics discussed in today's class
 ---------------------------------------------------------------------------------------------
 #### How State Locking Works
 **1. Acquire Lock:** Before Terraform performs an operation (plan, apply, etc.), it attempts to acquire a lock.
+
 **2. Modify State:** Once the lock is acquired, Terraform updates the state file.
+
 **3. Release Lock:** After the operation is complete, the lock is released, allowing other processes to proceed.
 
 ---------------------------------------------------------------------------------------------
 #### Supported Backends for Locking
 **• AWS S3 with DynamoDB:** Uses DynamoDB to maintain lock records.
+
 **• Terraform Cloud:** Built-in locking mechanism.
+
 **• Azure Blob Storage:** Automatically locks the state file during operations.
 
 ----------------------------------------------------------------------------------------------
