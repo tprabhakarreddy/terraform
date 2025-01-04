@@ -60,7 +60,6 @@ Locking the Terraform state file ensures that only one operation (e.g., plan, ap
 
 **3. Azure Blob Storage:** Automatically handles state locking during operations.
 
---------------------------------------------------------------------------------------------
 #### Steps to Lock the State File with S3 and DynamoDB
 1. Create an S3 bucket named *my-terraform-state-bucket* for state storage using the AWS Management Console, CLI, or Terraform
 2. Create a DynamoDB Table named *TerraformLockTable* for Locking using the AWS Management Console, CLI, or Terraform
