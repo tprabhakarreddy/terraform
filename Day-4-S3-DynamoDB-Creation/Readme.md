@@ -31,18 +31,18 @@ ween the state file and actual infrastructure.
 
 **2. Terraform Cloud:** Built-in locking mechanism.
 
-**3.Azure Blob Storage:** Automatically locks the state file during operations.
+**3. Azure Blob Storage:** Automatically locks the state file during operations.
 
 ----------------------------------------------------------------------------------------------
 *The following cases were discussed in the class:*
 ### 1.Challenges Without Locking Terraform State File
 Terraform state file locking is essential for preventing concurrent operations from causing inconsistencies or corruption. Without locking, the State File Corruption issue can arise:
 
-**Scenario:**
+**Scenario:**.
 
-• **Developer-A** runs `terraform apply` to create an S3 bucket.
+• **Developer-A** runs `terraform apply` to create a EC2 instance.
 
-• Simultaneously, **Developer-B** runs `terraform apply` to update a security group rule.
+• Simultaneously, **Developer-B** runs `terraform apply` to create a EC2 instance.
 
 • Both processes read the state file, modify it, and write back their changes without coordination.
 
