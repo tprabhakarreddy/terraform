@@ -48,6 +48,8 @@ Terraform state file locking is essential for preventing concurrent operations f
 
 • The result: Developer-B's changes overwrite Developer-A's changes, causing the state file to no longer match the actual infrastructure.
 
+------------------------------------------------------------------------------------------------
+
 ### 2. How to Lock the State File in Terraform
 Locking the Terraform state file ensures that only one operation (e.g., plan, apply) can modify the state at a time. This prevents conflicts, corruption, and inconsistencies when multiple users or automated processes interact with the same state file.
 
