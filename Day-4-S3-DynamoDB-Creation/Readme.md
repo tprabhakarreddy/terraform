@@ -8,14 +8,17 @@ Topics discussed in today's class
 **Terraform state file** locking is a mechanism to ensure that only one process or user can modify the Terraform state file at a time. This prevents issues such as:
 
 **1.State File Corruption:** Avoids simultaneous writes that could make the state file unusable
+
 **2.Race Conditions:** Ensures predictable behavior by sequentially processing changes.
 ween the state file and actual infrastructure.
+
 **3.Infrastructure Drift:** Prevents conflicting updates that could lead to discrepancies between the state file and actual infrastructure.
 
 
 
 ---------------------------------------------------------------------------------------------
 #### How State Locking Works
+
 **1. Acquire Lock:** Before Terraform performs an operation (plan, apply, etc.), it attempts to acquire a lock.
 **2. Modify State:** Once the lock is acquired, Terraform updates the state file.
 **3. Release Lock:** After the operation is complete, the lock is released, allowing other processes to proceed.
