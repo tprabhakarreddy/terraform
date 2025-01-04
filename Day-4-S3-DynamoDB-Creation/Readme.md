@@ -35,7 +35,7 @@ ween the state file and actual infrastructure.
 
 ----------------------------------------------------------------------------------------------
 *The following cases were discussed in the class:*
-### 1.Challenges Without Locking Terraform State File
+### 1. Challenges Without Locking Terraform State File
 Terraform state file locking is essential for preventing concurrent operations from causing inconsistencies or corruption. Without locking, the State File Corruption issue can arise:
 
 **Scenario:**.
@@ -53,7 +53,9 @@ Locking the Terraform state file ensures that only one operation (e.g., plan, ap
 
 #### Supported Backends for Locking
 **1. AWS S3 with DynamoDB:** Maintains lock records using a DynamoDB table.
+
 **2. Terraform Cloud:** Offers built-in locking as part of its remote backend.
+
 **3. Azure Blob Storage:** Automatically handles state locking during operations.
 
 --------------------------------------------------------------------------------------------
@@ -76,7 +78,7 @@ terraform {
 4. Initialize the Backend using `terraform init` command 
 
 --------------------------------------------------------------------------------------------
-### 3.Override State File by Updating .tf file
+### 3. Override State File by Updating .tf file
 Overriding the Terraform state file involves modifying the infrastructure configuration in main.tf and updating the state to reflect those changes. This is typically done when the current state no longer matches the desired infrastructure.
 
 **Example:**
@@ -105,5 +107,6 @@ terraform apply
 ```
 **4. Result:**
 Terraform destroys the EC2 instance and creates the S3 bucket.
-------------------------------------------------------------------------
+
+---------------------------------------------------
 #### Please refer to anoter document "Understanding Terraform State.docX" for more details
