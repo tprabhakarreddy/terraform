@@ -110,4 +110,4 @@ terraform apply
 Terraform destroys the EC2 instance and creates the S3 bucket.
 
 ---------------------------------------------------
-#### Please refer to anoter document "Understanding Terraform State.docX" for more details
+#### Please refer to anoter document "Understanding Terraform State File Locking.docX" for more details
