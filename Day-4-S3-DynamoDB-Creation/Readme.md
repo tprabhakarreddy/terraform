@@ -9,8 +9,12 @@ Topics discussed in today's class
 
 
 **1.State File Corruption:** Avoids simultaneous writes that could make the state file unusable.
+
 **2.Race Conditions:** Ensures predictable behavior by sequentially processing changes.
+
 **3.Infrastructure Drift:** Prevents conflicting updates that could lead to discrepancies between the state file and actual infrastructure.
+
+
 
 ---------------------------------------------------------------------------------------------
 #### How State Locking Works
