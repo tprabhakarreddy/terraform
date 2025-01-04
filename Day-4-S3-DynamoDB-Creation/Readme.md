@@ -7,11 +7,8 @@ Topics discussed in today's class
 ### Understanding Terraform State File Locking
 **Terraform state file** locking is a mechanism to ensure that only one process or user can modify the Terraform state file at a time. This prevents issues such as:
 
-
 **1.State File Corruption:** Avoids simultaneous writes that could make the state file unusable.
-
 **2.Race Conditions:** Ensures predictable behavior by sequentially processing changes.
-
 **3.Infrastructure Drift:** Prevents conflicting updates that could lead to discrepancies between the state file and actual infrastructure.
 
 
@@ -19,18 +16,14 @@ Topics discussed in today's class
 ---------------------------------------------------------------------------------------------
 #### How State Locking Works
 **1. Acquire Lock:** Before Terraform performs an operation (plan, apply, etc.), it attempts to acquire a lock.
-
 **2. Modify State:** Once the lock is acquired, Terraform updates the state file.
-
 **3. Release Lock:** After the operation is complete, the lock is released, allowing other processes to proceed.
 
 ---------------------------------------------------------------------------------------------
 #### Supported Backends for Locking
-**• AWS S3 with DynamoDB:** Uses DynamoDB to maintain lock records.
-
-**• Terraform Cloud:** Built-in locking mechanism.
-
-**• Azure Blob Storage:** Automatically locks the state file during operations.
+**1. AWS S3 with DynamoDB:** Uses DynamoDB to maintain lock records.
+**2. Terraform Cloud:** Built-in locking mechanism.
+**3.Azure Blob Storage:** Automatically locks the state file during operations.
 
 ----------------------------------------------------------------------------------------------
 *The following cases were discussed in the class:*
@@ -39,17 +32,20 @@ Terraform state file locking is essential for preventing concurrent operations f
 
 **Scenario:**
 • **Developer-A** runs `terraform apply` to create an S3 bucket.
+
 • Simultaneously, **Developer-B** runs `terraform apply` to update a security group rule.
+
 • Both processes read the state file, modify it, and write back their changes without coordination.
+
 • The result: Developer-B's changes overwrite Developer-A's changes, causing the state file to no longer match the actual infrastructure.
 
 ### 2. How to Lock the State File in Terraform
 Locking the Terraform state file ensures that only one operation (e.g., plan, apply) can modify the state at a time. This prevents conflicts, corruption, and inconsistencies when multiple users or automated processes interact with the same state file.
 
 #### Supported Backends for Locking
-**• AWS S3 with DynamoDB:** Maintains lock records using a DynamoDB table.
-**• Terraform Cloud:** Offers built-in locking as part of its remote backend.
-**• Azure Blob Storage:** Automatically handles state locking during operations.
+**1. AWS S3 with DynamoDB:** Maintains lock records using a DynamoDB table.
+**2. Terraform Cloud:** Offers built-in locking as part of its remote backend.
+**3. Azure Blob Storage:** Automatically handles state locking during operations.
 
 --------------------------------------------------------------------------------------------
 #### Steps to Lock the State File with S3 and DynamoDB
