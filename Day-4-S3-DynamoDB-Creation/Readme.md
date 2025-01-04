@@ -31,6 +31,7 @@ Topics discussed in today's class
 Terraform state file locking is essential for preventing concurrent operations from causing inconsistencies or corruption. Without locking, the State File Corruption issue can arise:
 
 **Scenario:**
+
 • **Developer-A** runs `terraform apply` to create an S3 bucket.
 
 • Simultaneously, **Developer-B** runs `terraform apply` to update a security group rule.
