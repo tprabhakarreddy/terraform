@@ -21,8 +21,7 @@ aws ec2 run-instances --image-id ami-07d9cf938edb0739b --instance-type t2.micro 
 ```
 
 ### 2. Prepare Terraform Configuration
-Write the resource block in the Terraform configuration file that matches the resource you want to import.
-
+Write the resource block in the Terraform configuration file that matches the resource you want to import.  
 **Example for an AWS EC2 instance**
 
 ```
@@ -32,8 +31,7 @@ resource "aws_instance" "ec2" {
 ```
 
 ### 3. Run the Terraform Import Command
-Use the terraform import command to import the resource into the Terraform state file.
-
+Use the terraform import command to import the resource into the Terraform state file.  
 **Command**
 ```
 terraform import [resource_type.resource_name] [resource_id]
