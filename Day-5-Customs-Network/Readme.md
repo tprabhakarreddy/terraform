@@ -161,6 +161,7 @@ resource "aws_instance" "public" {
 ```
 
 **Private EC2 Instance**
+```
 resource "aws_instance" "private" {
   ami                         = "ami-07d9cf938edb0739b"
   instance_type               = "t2.micro"
@@ -174,7 +175,7 @@ resource "aws_instance" "private" {
   }
 
 }
-
+```
 ----------------------------------------------------------------------------------------------
 
 
