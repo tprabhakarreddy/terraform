@@ -53,9 +53,9 @@ terraform state list
 - Add the necessary arguments (e.g., instance type, tags) to the resource block if they are not already present.
 ```
 resource "aws_instance" "ec2" {
-  ami           = "ami-07d9cf938edb0739b"
+  ami           = "ami-07d9cf938edb0739b" # Change to your ami ID
   instance_type = "t2.micro"
-  key_name      = "newkey"
+  key_name      = "newkey" # Change to your key name
   tags = {
     Name = "EC2"
   }
