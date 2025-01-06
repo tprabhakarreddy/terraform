@@ -176,6 +176,18 @@ resource "aws_instance" "private" {
 
 }
 ```
+
+### 10. Run Terraform commands
+Run the Terraform commands
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+### 11.Test Connectivity
+SSH into the Public EC2 using its public IP.
+From the Public EC2, SSH into the Private EC2 using its private IP
 ----------------------------------------------------------------------------------------------
 
 
