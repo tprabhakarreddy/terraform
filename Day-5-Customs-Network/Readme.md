@@ -187,10 +187,7 @@ terraform apply
 
 ### 11.Test Connectivity
 SSH into the Public EC2 using its public IP.
+
 From the Public EC2, SSH into the Private EC2 using its private IP
 
 ----------------------------------------------------------------------------------------------
-
-
-
-
