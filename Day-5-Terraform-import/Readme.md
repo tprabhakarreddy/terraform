@@ -36,7 +36,9 @@ Use the terraform import command to import the resource into the Terraform state
 terraform import [resource_type.resource_name] [resource_id]
 ```
 **Example**
+```
 terraform import aws_instance.ec2 i-07a29de684bf20899
+```
 
 ### 4. Verify the Resource is Imported
 After running the import command:
