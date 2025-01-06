@@ -13,14 +13,14 @@ Bring legacy infrastructure under Terraform's control.
 
 ### Steps for importing resources into Terraform
 
-### 2. Create the Resource
+### 1. Create the Resource
 Use the AWS Management Console, CLI, or API to create new resource.
 AWS CLI command for EC2 
 ```
 aws ec2 run-instances --image-id ami-07d9cf938edb0739b --instance-type t2.micro --key-name newkey --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=EC2}]'
 ```
 
-### 1. Prepare Terraform Configuration
+### 2. Prepare Terraform Configuration
 Write the resource block in the Terraform configuration file that matches the resource you want to import.
 **Example for an AWS EC2 instance**
 
