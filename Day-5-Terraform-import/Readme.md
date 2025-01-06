@@ -14,7 +14,8 @@ Topics discussed in today's class
 
 ### 1. Create the Resource
 Use the AWS Management Console, CLI, or API to create new resource.
-AWS CLI command for EC2 
+
+Use the following AWS CLI command to work with EC2. Replace <image-id> and <key-name> with your specific values.
 ```
 aws ec2 run-instances --image-id ami-07d9cf938edb0739b --instance-type t2.micro --key-name newkey --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=EC2}]'
 ```
