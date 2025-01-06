@@ -7,9 +7,8 @@ Topics discussed in today's class
 **Terraform Import** is a command used to bring existing infrastructure resources under Terraform's management by importing their current state into the Terraform state file (`terraform.tfstate`). It enables Terraform to track and manage those resources going forward.
 
 ### Use Cases:
-Manage manually created resources.
-
-Bring legacy infrastructure under Terraform's control.
+- Manage manually created resources.
+- Bring legacy infrastructure under Terraform's control.
 
 ### Steps for importing resources into Terraform
 
