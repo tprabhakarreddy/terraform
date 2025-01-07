@@ -1,3 +1,15 @@
+# Define S3 Bucket and Upload Code
+resource "aws_s3_bucket" "lambda_bucket" {
+  bucket = "prt-lambda-bucket" # Replace with a unique bucket name
+}
+
+# Upload code to S3
+resource "aws_s3_object" "lambda_zip" {
+  bucket = aws_s3_bucket.lambda_bucket.bucket
+  key    = "lambda_function.zip"   # File name in the bucket
+  source = "./lambda_function.zip" # Path to the local ZIP file
+}
+
 # Create IAM role
 # Following Json code copied from https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
 
@@ -48,5 +60,6 @@ resource "aws_lambda_function" "example_lambda" {
   role          = aws_iam_role.lambda_role.arn
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.13"
-  filename      = "lambda_function.zip"
+  s3_bucket     = aws_s3_bucket.lambda_bucket.bucket # S3 bucket name
+  s3_key        = aws_s3_object.lambda_zip.key       # S3 object key
 }
