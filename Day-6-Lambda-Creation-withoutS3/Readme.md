@@ -10,13 +10,13 @@ Topics discussed in today's class
 ### Lamda creation process without S3 in Terraform
 Creating an AWS Lambda function using Terraform without involving Amazon S3 involves directly uploading the Lambda function code (usually in a ZIP file) from the local file system. You specify the Lambda code and other details (e.g., runtime, handler, IAM role) in your Terraform configuration file, and Terraform will manage the creation and deployment of the Lambda function  
 
-#### Steps Overview:
+### Steps Overview:
 - Prepare the Lambda function code (`lambda_function.py`).  
 - Create a unix script for zipping `lambda_function.py` and call terraform commands.  
 - Write the Terraform configuration file to create the Lambda function in `lambda.tf`.  
 - Run the Unix shell script to zip the code and apply the Terraform configuration.  
 
-#### 1. Prepare the Lambda function code (lambda_function.py)
+### 1. Prepare the Lambda function code (lambda_function.py)
 Write the Lambda Code: Write the Lambda function (e.g., lambda_function.py).
 ```
 def lambda_handler(event, context):
@@ -27,7 +27,7 @@ def lambda_handler(event, context):
 ```
 -----------------------------------------------------------------------------------------------
 
-#### 2. Create a Unix Script to Zip the Code and Apply Terraform Commands
+### 2. Create a Unix Script to Zip the Code and Apply Terraform Commands
 Write a Unix shell script (`deploy_lambda.sh`) that will:  
 - Zip the `lambda_function.py` file into `lambda_function.zip`.
 - Run `terraform` commands to apply the configuration.
