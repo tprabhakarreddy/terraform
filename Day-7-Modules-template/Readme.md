@@ -16,7 +16,7 @@ A module typically contains these files:
 
 -----------------------------------------------------------------------------------------
 
-**How to Use a Module**
+**How to Use a Module**  
 Modules are called using the `module` block, specifying the source and variables.
 
 - **Example:** Using a local module:
@@ -37,7 +37,7 @@ module "example" {
 -----------------------------------------------------------------------------------------
 #### Brief Overview with Examples:
 
-1. **Use Local Template in Modules**
+1. **Use Local Template in Modules**  
 Local templates are modules stored within your project directory, referenced using a relative path.
 
 - **Example Directory Structure:**
@@ -59,7 +59,7 @@ module "local_module" {
 }
 ```
 --------------------------------------------------------------------------------------
-2. **Use Own Repository Template in Modules**
+2. **Use Own Repository Template in Modules**  
 Custom templates are hosted in your private or public repository, allowing them to be reused across multiple projects.
 -**Example Usage:**
 ```
@@ -69,7 +69,7 @@ module "repo_module" {
 }
 ```
 --------------------------------------------------------------------------------------
-3. **Use Repository Template from Official Terraform GitHub in Modules**
+3. **Use Repository Template from Official Terraform GitHub in Modules**  
 Use pre-built, well-maintained modules from Terraform's GitHub or Registry to simplify common setups.
 
 - **Example (AWS VPC Module):**
