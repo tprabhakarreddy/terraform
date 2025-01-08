@@ -7,7 +7,7 @@
 ### Modules in Terraform
 A **module** in Terraform is a container for multiple resources that are used together. Modules are a way to organize and reuse infrastructure code, making configurations more manageable, scalable, and consistent.
 
-**Structure of a Module**
+**Structure of a Module**  
 A module typically contains these files:  
 - `main.tf`: Defines the resources and logic.  
 - `variables.tf`: Declares input variables for the module.  
