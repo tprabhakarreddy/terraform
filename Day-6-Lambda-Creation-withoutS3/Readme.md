@@ -1,7 +1,7 @@
 Topics discussed in today's class
 -----------------------------------------
 1. Lamda creation process in Terraform
-2. Life Cycle rules in Terrafomr
+2. Life Cycle rules in Terraform
 3. -target Option in Terraform
 4. depends_on Option in Terraform
 5. User_data option in Terraform
