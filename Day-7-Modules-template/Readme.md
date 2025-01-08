@@ -93,3 +93,5 @@ In Terraform, if a variable has a default value defined in `variables.tf` and th
 **How it Works:**
 - If a value is passed explicitly when calling the module, Terraform uses that value.
 - If no value is passed, Terraform falls back to the default value defined in variables.tf.  
+
+----------------------------------------------------------------------------------------
