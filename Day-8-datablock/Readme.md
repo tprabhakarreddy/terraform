@@ -6,6 +6,7 @@
 -----------------------------------------------------------------------
 ### Data Block
 In Terraform, a **data block** is used to retrieve or reference information from existing infrastructure or services in your cloud provider, rather than creating new resources. Data blocks are useful when you need to use existing resources as inputs for other resources in your Terraform configuration.  
+
 **Syntax**  
 Here’s the basic structure of a data block:
 ```
