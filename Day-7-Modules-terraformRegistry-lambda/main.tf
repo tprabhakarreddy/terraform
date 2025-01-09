@@ -1,5 +1,5 @@
 module "name" {
-  source                 = "github.com/terraform-aws-modules/terraform-aws-lambda"
+  source                 = "terraform-aws-modules/lambda/aws"
   function_name          = "my-function"
   handler                = "lambda_function.lambda_handler"
   runtime                = "python3.12"
