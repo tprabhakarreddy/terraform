@@ -6,7 +6,7 @@ resource "aws_db_instance" "mysql_db" {
   instance_class          = "db.t3.micro" # Free tier eligible instance class
   username                = "admin"
   password                = "mypassword123"
-  publicly_accessible     = true
+  publicly_accessible     = false
   skip_final_snapshot     = true
   db_subnet_group_name    = aws_db_subnet_group.db_subnet_group.id
   vpc_security_group_ids  = [aws_security_group.mySG.id]
