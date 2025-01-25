@@ -12,7 +12,7 @@ resource "aws_db_instance" "mysql_db" {
   vpc_security_group_ids  = [aws_security_group.mySG.id]
   depends_on              = [aws_db_subnet_group.db_subnet_group]
   backup_retention_period = 7
-  multi_az               = true
+  multi_az                = true
 }
 
 # Create Subnet Group for Database 

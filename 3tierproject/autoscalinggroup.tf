@@ -6,8 +6,8 @@ resource "aws_launch_template" "FrontEnd-template" {
   instance_type          = var.launch_templates["FrontEnd-template"].instance_type
   key_name               = var.launch_templates["FrontEnd-template"].key_name
   vpc_security_group_ids = [aws_security_group.mySG.id]
-  user_data = filebase64("frontend-lt.sh")
-   update_default_version = true
+  user_data              = filebase64("frontend-lt.sh")
+  update_default_version = true
   tag_specifications {
     resource_type = "instance"
     tags = {
@@ -23,8 +23,8 @@ resource "aws_launch_template" "BackEnd-template" {
   instance_type          = var.launch_templates["BackEnd-template"].instance_type
   key_name               = var.launch_templates["BackEnd-template"].key_name
   vpc_security_group_ids = [aws_security_group.mySG.id]
-   user_data = filebase64("backend-lt.sh")
-   update_default_version = true
+  user_data              = filebase64("backend-lt.sh")
+  update_default_version = true
   tag_specifications {
     resource_type = "instance"
     tags = {
@@ -44,7 +44,7 @@ resource "aws_autoscaling_group" "FrontEnd-ASG" {
     aws_subnet.public-subnet["public1a"].id,
     aws_subnet.public-subnet["public2b"].id
   ]
-   target_group_arns = [aws_lb_target_group.FrontEnd-tg.arn]
+  target_group_arns = [aws_lb_target_group.FrontEnd-tg.arn]
   launch_template {
     id      = aws_launch_template.FrontEnd-template.id
     version = aws_launch_template.FrontEnd-template.latest_version
@@ -60,11 +60,11 @@ resource "aws_autoscaling_group" "FrontEnd-ASG" {
       "desired_capacity"
     ]
   }
-    tag {
+  tag {
     key                 = "Name"
     value               = "FrontEnd-asg"
     propagate_at_launch = true
-  }      
+  }
 
 }
 
@@ -95,9 +95,9 @@ resource "aws_autoscaling_group" "BackEnd-ASG" {
       "desired_capacity"
     ]
   }
-    tag {
+  tag {
     key                 = "Name"
     value               = "BackEnd-asg"
     propagate_at_launch = true
-  }  
+  }
 }
